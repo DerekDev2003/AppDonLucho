@@ -1,0 +1,119 @@
+<ion-tabs>
+  <!--Tab de Hamburguesa-->
+  <ion-tab tab="Hamburguer">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Hamburguesa</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content [fullscreen]="true">
+      <div class="content">
+        <!--Componente-->
+        <app-view-order-client
+        [productOrderList]="productOrderList "
+        (productRemoved)="removeProductOrderList($event)"
+        ></app-view-order-client>
+        <app-view-products 
+        [productList]="HamburguerList"
+        (ProductAdded)="addProductOrderList($event)"
+        ></app-view-products>
+      </div>
+    </ion-content>
+  </ion-tab>
+  <!--Tab de Papas Fritas-->
+  <ion-tab tab="French">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Papas Fritas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen="true">
+      <div class="content">
+        <app-view-order-client
+        [productOrderList]="productOrderList"
+        (productRemoved)="removeProductOrderList($event)"
+        ></app-view-order-client>
+        <app-view-products
+        [productList]="FrenchList"
+        (ProductAdded)="addProductOrderList($event)"
+        >
+
+        </app-view-products>
+
+      </div>
+    </ion-content>
+  </ion-tab>
+  <!--Tab de Batidos-->
+  <ion-tab tab="Smoothies">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Batidos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen="true">
+      <div class="content">
+        <app-view-order-client
+        [productOrderList]="productOrderList"
+        (productRemoved)="removeProductOrderList($event)"
+        ></app-view-order-client>
+        <app-view-products
+        [productList]="Smoothies"
+        (ProductAdded)="addProductOrderList($event)"
+        >
+
+        </app-view-products>
+
+      </div>
+    </ion-content>
+  </ion-tab>
+  <!--Tab de Refrescos-->
+  <ion-tab tab="Drinks">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Refrescos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <div class="content">
+        <app-view-order-client
+        [productOrderList]="productOrderList"
+        (productRemoved)="removeProductOrderList($event)"
+        ></app-view-order-client>
+        <app-view-products
+        [productList]="Drinks"
+        (ProductAdded)="addProductOrderList($event)"
+        >
+
+        </app-view-products>
+
+      </div>
+    </ion-content>
+  </ion-tab>
+
+  <!--Botones del tab -->
+  <ion-tab-bar slot="bottom">
+    <!--Boton de Hamburguesa-->
+    <ion-tab-button tab="Hamburguer">
+      <ion-icon src="../../../assets/svg/Hamburguer.svg"></ion-icon>
+      <ion-text>Hamburguesass</ion-text>
+    </ion-tab-button>
+    <!--Boton de Papas Fritas-->
+    <ion-tab-button tab="French">
+      <ion-icon src="../../../assets/svg/FrenchFries.svg"></ion-icon>
+      <ion-text>Papas Fritas</ion-text>
+    </ion-tab-button>
+    <!--Boton de Batidos-->
+    <ion-tab-button tab="Smoothies">
+      <ion-icon src="../../../assets/svg/Smoothie.svg"></ion-icon>
+      <ion-text>Batidos</ion-text>
+    </ion-tab-button>
+    <!--Boton de Cola-->
+    <ion-tab-button tab="Drinks">
+      <ion-icon src="../../../assets/svg/Drink.svg"></ion-icon>
+      <ion-text>Refrescos</ion-text>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

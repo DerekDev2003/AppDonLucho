@@ -1,0 +1,43 @@
+<ion-list lines="none" *ngIf="orderListClone.length > 0">
+  <!--Titulo y Boton de Añadir-->
+  <div class="order-client">
+    <div class="title">
+      <ion-label id="order-client-title">Orden del cliente</ion-label>
+    </div>
+    <div class="button-action">
+      <ion-button color="warning">
+        <ion-icon name="add-outline"></ion-icon>
+        añadir
+      </ion-button>
+    </div>
+  </div>
+  <!--Contenedor del nombre-->
+  <div class="name-container">
+    <ion-input placeholder="Ingrese el propiertario" fill="solid"></ion-input>
+  </div>
+  <!--Contenido-->
+  <ion-item *ngFor="let product of orderListClone">
+    <ion-thumbnail slot="start">
+      <img [src]="product.image" alt="Silueta de montañas">
+    </ion-thumbnail>
+    <div class="features">
+      <ion-label>
+        <h1 class="product-name">{{product.name}}</h1>
+      </ion-label>
+      <ion-label>
+        <h2 class="product-price">Precio: ${{product.price}}</h2>
+      </ion-label>
+      <ion-label class="product-quantity">
+        <h3>Cantidad: {{product.quantity}}</h3>
+      </ion-label>
+      <ion-label>
+        <h3 class="product-total">Total unitario: ${{product.getTotalUnitPrice()}}</h3>
+      </ion-label>
+    </div>
+    <div class="content-column" slot="end">
+      <ion-button color="danger" (click)="removeProductOrderList(product)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-item>
+</ion-list>

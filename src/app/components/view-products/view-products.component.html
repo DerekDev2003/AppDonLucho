@@ -1,0 +1,39 @@
+
+<ion-list *ngFor="let category of ListCategory" lines="none">
+  <ion-list-header>
+    <ion-label>{{category}}</ion-label>
+  </ion-list-header>
+  <ng-container *ngFor="let product of productList">
+    <ion-item *ngIf="product.category===category">
+      <!--thumbnail del producto-->
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" [src]="product.image" />
+      </ion-thumbnail>
+      <!--Descripcion del producto-->
+      <div class="features" style="display: flex; flex-direction: column;">
+        <ion-label>
+          <h1 class="product-name">{{product.name}}</h1>
+        </ion-label>
+        <ion-label>
+          <h2 class="product-price">Precio:${{product.price}}</h2>
+        </ion-label>
+        <ion-label>
+          <p class="product-description">{{product.description}}</p>
+        </ion-label>
+      </div>
+      <!--Ingresar cantidad-->
+      <div slot="end" style="display: flex; flex-direction: row;">
+        <div class="content-input">
+          <ion-input placeholder="Cantidad" type="number" [(ngModel)]="product.quantity"></ion-input>
+        </div>
+        <!--Boton para añadir-->
+        <ion-button class="add-button" (click)="addProduct(product)">
+          <ion-icon name="add-outline" class="icon"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-item>
+
+  </ng-container>
+
+</ion-list>

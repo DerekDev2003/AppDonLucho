@@ -1,0 +1,96 @@
+$primary-color: #ffffff;
+$secondary-color: #ffcc80;
+$text-color: #767676;
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.action-button {
+  width: 30%;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: bold;
+  color: $text-color;
+}
+
+p {
+  text-align: start;
+  color: $text-color;
+}
+
+ion-card {
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.092);
+  border-radius: 8px;
+}
+
+ion-card-header {
+  background: $primary-color;
+}
+
+ion-card-content {
+  padding: 10px;
+}
+
+ion-item {
+  margin-bottom: -12px;
+  --padding-start: 0;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.description-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+span {
+  font-size: 15px;
+}
+.content-Card {
+    display: flex;
+    flex-wrap: wrap; // Permite que las tarjetas se envuelvan a la siguiente línea
+    justify-content: center;
+    gap: 0px; // Espacio entre las tarjetas
+  }
+  
+  ion-card {
+    flex: 1 1 calc(33.333% - 20px); // Hace que las tarjetas ocupen un tercio del contenedor con espacio entre ellas
+    max-width: 350px; // Tamaño máximo de cada tarjeta
+    min-width: 250px; // Tamaño mínimo de cada tarjeta
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; // Espacio inferior entre tarjetas en filas diferentes
+  }
+  
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+  }
+  
+  .title-product {
+    font-weight: bold;
+  }
+  
+  .description-buy {
+    color: #666;
+  }
+  
